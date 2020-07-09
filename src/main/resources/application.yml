@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: ms-personal-btc
+  r2dbc: 
+    url: r2dbc:pool:postgresql://localhost:5432/cryptocurrency?schema=exchange
+    #url: r2dbc:pool:postgresql://${JDBC_HOST}:${JDBC_PORT}/${JDBC_DATABASE}?schema=${JDBC_SCHEMA}
+    username: postgresql
+    password: postgres#2001
+    pool:
+      initial-size: 10
+      max-size: 50
+      max-idle-time: 30m
+      validation-query: SELECT 1
+
+bitcoin:
+  network:
+    profile: test #main/test
+  wallet:
+    name: test
+    path: D:\\bitcoin-spv-wallet
+  transaction:
+    minConfirm: 6
