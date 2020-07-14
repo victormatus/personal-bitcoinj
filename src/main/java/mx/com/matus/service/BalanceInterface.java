@@ -2,7 +2,9 @@ package mx.com.matus.service;
 
 import java.math.BigDecimal;
 
+import reactor.core.publisher.Mono;
+
 public interface BalanceInterface {
 	
-	BigDecimal getBalance();
+	Mono<BigDecimal> getBalance();
 }

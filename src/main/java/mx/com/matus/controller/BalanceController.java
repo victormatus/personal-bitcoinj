@@ -1,25 +1,33 @@
 package mx.com.matus.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import mx.com.matus.service.BalanceInterface;
-import mx.com.matus.vo.response.GenericResponse;
+import mx.com.matus.util.Constants;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/bitcoin-spv")
+@RequestMapping("/balances")
 public class BalanceController {
 	
 	@Autowired
 	private BalanceInterface balanceService;
 	
-	@GetMapping("/balances")
-	Mono<GenericResponse> getBalance(){
-		return Mono.just(new GenericResponse(0, balanceService.getBalance()));
+	@GetMapping
+	Mono<Map<String, Object>> getBalance(){
+		Map<String, Object>response = new HashMap<>();
+		return balanceService.getBalance()
+				.flatMap(balance -> {
+					response.put(Constants.CODE_RESPONSE, 0);
+					response.put("balance", balance);
+					return Mono.just(response);
+				});
 	}
 	
 }

@@ -10,11 +10,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import mx.com.matus.model.NetworkProfile;
 import mx.com.matus.util.Constants;
 
 @SpringBootApplication
-@Log4j2
+@Slf4j
 public class PersonalBtcApplication {
 	
 	@Value("${bitcoin.network.profile}")

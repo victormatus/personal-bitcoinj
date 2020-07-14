@@ -1,13 +1,14 @@
 server:
   port: 8080
 spring:
+  webflux:
+    base-path: bitcoin-spv
   application:
     name: ms-personal-btc
   r2dbc: 
-    url: r2dbc:pool:postgresql://localhost:5432/cryptocurrency?schema=exchange
-    #url: r2dbc:pool:postgresql://${JDBC_HOST}:${JDBC_PORT}/${JDBC_DATABASE}?schema=${JDBC_SCHEMA}
-    username: postgresql
-    password: postgres#2001
+    url: r2dbc:pool:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}?schema=${DB_SCHEMA}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     pool:
       initial-size: 10
       max-size: 50
@@ -16,9 +17,9 @@ spring:
 
 bitcoin:
   network:
-    profile: test #main/test
+    profile: ${BTC_NETWORK_PROFILE} #main/test
   wallet:
     name: test
-    path: D:\\bitcoin-spv-wallet
+    path: ${BTC_WALLET_PATH}
   transaction:
     minConfirm: 6
