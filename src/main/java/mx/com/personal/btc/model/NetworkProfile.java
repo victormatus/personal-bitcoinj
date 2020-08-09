@@ -1,4 +1,4 @@
-package mx.com.matus.model;
+package mx.com.personal.btc.model;
 
 import org.bitcoinj.params.AbstractBitcoinNetParams;
 import org.springframework.stereotype.Component;

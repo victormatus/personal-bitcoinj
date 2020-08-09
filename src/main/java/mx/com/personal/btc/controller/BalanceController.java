@@ -1,4 +1,4 @@
-package mx.com.matus.controller;
+package mx.com.personal.btc.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import mx.com.matus.service.BalanceInterface;
-import mx.com.matus.util.Constants;
+import mx.com.personal.btc.service.BalanceInterface;
+import mx.com.personal.btc.util.Constants;
 import reactor.core.publisher.Mono;
 
 @RestController

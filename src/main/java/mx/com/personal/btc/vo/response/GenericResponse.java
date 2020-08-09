@@ -1,4 +1,4 @@
-package mx.com.matus.vo.response;
+package mx.com.personal.btc.vo.response;
 
 import java.io.Serializable;
 

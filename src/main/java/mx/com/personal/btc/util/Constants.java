@@ -1,4 +1,4 @@
-package mx.com.matus.util;
+package mx.com.personal.btc.util;
 
 public class Constants {
 	private Constants() {}
@@ -8,6 +8,8 @@ public class Constants {
 	
 	public static final String MESSAGE_RESPONSE = "message";
 	public static final String CODE_RESPONSE = "code";
+	
+	public static final String ADDRESS_FIELD_RESPONSE = "address";
 	
 	
 }

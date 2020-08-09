@@ -1,4 +1,4 @@
-package mx.com.matus;
+package mx.com.personal.btc;
 
 import java.io.File;
 
@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Bean;
 
 import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
-import mx.com.matus.model.NetworkProfile;
-import mx.com.matus.util.Constants;
+import mx.com.personal.btc.model.NetworkProfile;
+import mx.com.personal.btc.util.Constants;
 
 @SpringBootApplication
 @Slf4j

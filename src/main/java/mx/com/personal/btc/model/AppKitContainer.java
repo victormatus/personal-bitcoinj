@@ -1,4 +1,4 @@
-package mx.com.matus.model;
+package mx.com.personal.btc.model;
 
 import java.io.File;
 import java.time.LocalDateTime;
